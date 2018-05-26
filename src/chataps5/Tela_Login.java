@@ -277,12 +277,14 @@ public class Tela_Login extends javax.swing.JFrame {
             {
                 messagingFrames[openWindowNo].ta_view_message.append(message.replaceFirst(to,"")+"\n");
                 messagingFrames[openWindowNo].setVisible(true);
+                TocaSom.Tocar();
             }
             else
             {
                 messagingFrames[messagingFrameNo]=new MessagingFrame(from,userName,clientManager);
                 messagingFrames[messagingFrameNo].setVisible(true);
                 messagingFrames[messagingFrameNo].ta_view_message.append(message.replaceFirst(to,"")+"\n");
+                TocaSom.Tocar();
                 messagingFrameNo++;
             }
         }

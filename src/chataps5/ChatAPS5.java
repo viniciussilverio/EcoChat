@@ -9,6 +9,7 @@ public class ChatAPS5 {
         Tela_Login tela_Login=new Tela_Login(Clientes); //Instancia a janela de login
         tela_Login.setLocation(400,100); //Define o tamanho da tela de login
         tela_Login.setVisible(true); //Exibe a tela de login
+        TocaSom.Tocar();
     }
 
 }
