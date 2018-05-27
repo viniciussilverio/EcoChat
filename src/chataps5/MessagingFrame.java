@@ -62,10 +62,8 @@ public class MessagingFrame extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tp_write_message);
 
         but_send.setText("Enviar");
-        but_send.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                but_sendActionPerformed(evt);
-            }
+        but_send.addActionListener((java.awt.event.ActionEvent evt) -> {
+            but_sendActionPerformed(evt);
         });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -112,35 +110,27 @@ public class MessagingFrame extends javax.swing.JFrame {
         //Botões de Emoticon
         
         but_cry.setIcon(new ImageIcon(Emoticon.class.getResource("/media/crying-1.png")));
-        but_cry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                but_emoticonActionPerformed(evt, "[;(]");
-            }
+        but_cry.addActionListener((java.awt.event.ActionEvent evt) -> {
+            but_emoticonActionPerformed(evt, "[;(]");
         });
 
         but_angry.setIcon(new ImageIcon(Emoticon.class.getResource("/media/angry-1.png")));
-        but_angry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                but_emoticonActionPerformed(evt, "[:*]");
-            }
+        but_angry.addActionListener((java.awt.event.ActionEvent evt) -> {
+            but_emoticonActionPerformed(evt, "[:*]");
         });
 
         but_happy.setIcon(new ImageIcon(Emoticon.class.getResource("/media/smile-1.png")));
-        but_happy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                but_emoticonActionPerformed(evt, "[:)]");
-            }
+        but_happy.addActionListener((java.awt.event.ActionEvent evt) -> {
+            but_emoticonActionPerformed(evt, "[:)]");
         });
 
         but_sad.setIcon(new ImageIcon(Emoticon.class.getResource("/media/sceptic-1.png")));
-        but_sad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                but_emoticonActionPerformed(evt, "[:(]");
-            }
+        but_sad.addActionListener((java.awt.event.ActionEvent evt) -> {
+            but_emoticonActionPerformed(evt, "[:(]");
         });
         
 
-        jPanel3.setLayout(new GridLayout(0,5));
+        jPanel3.setLayout(new GridLayout(0,4));
         jPanel3.add(but_cry);
         jPanel3.add(but_happy);
         jPanel3.add(but_sad);
