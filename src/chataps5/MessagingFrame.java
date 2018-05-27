@@ -7,6 +7,9 @@ import java.io.ObjectInputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class MessagingFrame extends javax.swing.JFrame {
 
@@ -39,6 +42,7 @@ public class MessagingFrame extends javax.swing.JFrame {
         but_angry = new javax.swing.JButton();
         but_guitarra = new javax.swing.JButton();
         but_vitas = new javax.swing.JButton();
+        but_salvar = new javax.swing.JButton();
         
         but_send = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -151,11 +155,25 @@ public class MessagingFrame extends javax.swing.JFrame {
         but_vitas.setText("Vitas");
         but_vitas.addActionListener((java.awt.event.ActionEvent evt) -> {
             but_emoticonActionPerformed(evt, "[2]");
-        });        
+        });
+        
+        but_salvar.setText("Salvar");
+        but_salvar.addActionListener((java.awt.event.ActionEvent evt) -> {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setFileFilter(new FileNameExtensionFilter("Arquivo de Texto","txt"));
+            if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                try{
+                    Arquivo.gravarArquivo(ta_view_message.getText().replaceAll("\n", System.getProperty("line.separator")), fileChooser.getSelectedFile().getAbsolutePath().endsWith(".txt") ? fileChooser.getSelectedFile().getAbsolutePath() : fileChooser.getSelectedFile().getAbsolutePath()+".txt");
+                }catch (Exception e){
+                    System.out.println("Erro para gravar arquivo");
+                }
+            }
+        });   
 
-        jPanel4.setLayout(new GridLayout(0,2));
+        jPanel4.setLayout(new GridLayout(0,3));
         jPanel4.add(but_guitarra);
         jPanel4.add(but_vitas);
+        jPanel4.add(but_salvar);
         
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -214,7 +232,7 @@ public class MessagingFrame extends javax.swing.JFrame {
     }
     
 
-    public javax.swing.JButton but_send, but_cry, but_angry, but_sad, but_happy, but_guitarra, but_vitas;
+    public javax.swing.JButton but_send, but_cry, but_angry, but_sad, but_happy, but_guitarra, but_vitas, but_salvar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
