@@ -7,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.StringTokenizer;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class Tela_Login extends javax.swing.JFrame {
 
@@ -88,6 +89,7 @@ public class Tela_Login extends javax.swing.JFrame {
         mi_sign_in = new javax.swing.JMenuItem();
         mi_sign_out = new javax.swing.JMenuItem();
         server_ip = new javax.swing.JMenuItem();
+        sobre = new javax.swing.JMenuItem();
 
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -113,6 +115,11 @@ public class Tela_Login extends javax.swing.JFrame {
 
         mi_sign_in.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         mi_sign_in.setText("Entrar");
+        mi_sign_in.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but_entrarActionPerformed();
+            }
+        });
         jMenu1.add(mi_sign_in);
 
         mi_sign_out.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
@@ -135,10 +142,16 @@ public class Tela_Login extends javax.swing.JFrame {
             }
         });
         jMenu3.add(server_ip);
-
         jMenuBar1.add(jMenu3);
 
-        jMenu2.setText("Help");
+        jMenu2.setText("Ajuda");
+        sobre.setText("Sobre");
+        sobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JOptionPane.showMessageDialog(null, "Escrever mensagem!!!");
+            }
+        });
+        jMenu2.add(sobre);
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -309,5 +322,5 @@ public class Tela_Login extends javax.swing.JFrame {
     private javax.swing.JMenuItem mi_sign_in;
     private javax.swing.JMenuItem mi_sign_out;
     private javax.swing.JPanel myPanel;
-    private javax.swing.JMenuItem server_ip;
+    private javax.swing.JMenuItem server_ip, sobre;
 }
