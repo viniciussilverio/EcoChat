@@ -246,8 +246,14 @@ public class Tela_Login extends javax.swing.JFrame {
 
             if (isWindowOpen) {
                 messagingFrames[openWindowNo].ta_view_message.append(message.replaceFirst(to, "") + "\n");
-                if (message.contains("[CRY]")) {
-                    Emoticon.Emoticon();
+                if (message.contains("[;(]")) {
+                    Emoticon.Emoticon("[;(]");
+                }else if (message.contains("[:*]")) {
+                    Emoticon.Emoticon("[:*]");
+                }else if (message.contains("[:)]")) {
+                    Emoticon.Emoticon("[:)]");
+                }else if (message.contains("[:(]")) {
+                    Emoticon.Emoticon("[:(]");
                 }
                 messagingFrames[openWindowNo].setVisible(true);
                 TocaSom.Tocar();
@@ -255,8 +261,14 @@ public class Tela_Login extends javax.swing.JFrame {
                 messagingFrames[messagingFrameNo] = new MessagingFrame(from, userName, clientManager);
                 messagingFrames[messagingFrameNo].setVisible(true);
                 messagingFrames[messagingFrameNo].ta_view_message.append(message.replaceFirst(to, "") + "\n");
-                if (message.contains("[CRY]")) {
-                    Emoticon.Emoticon();
+                 if (message.contains("[;(]")) {
+                    Emoticon.Emoticon("[;(]");
+                }else if (message.contains("[:*]")) {
+                    Emoticon.Emoticon("[:*]");
+                }else if (message.contains("[:)]")) {
+                    Emoticon.Emoticon("[:)]");
+                }else if (message.contains("[:(]")) {
+                    Emoticon.Emoticon("[:(]");
                 }
                 TocaSom.Tocar();
                 messagingFrameNo++;

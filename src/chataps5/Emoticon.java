@@ -8,10 +8,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Emoticon extends JFrame {
-    public static JFrame Emoticon(){
+    public static JFrame Emoticon(String emoticon){
         JFrame frame = new JFrame(" Emoticon ");
+        ImageIcon icon;
         frame.setUndecorated(true);
-        ImageIcon icon = new ImageIcon(Emoticon.class.getResource("/media/crying.png"));
+        if ("[;(]".equals(emoticon)){
+            icon = new ImageIcon(Emoticon.class.getResource("/media/crying.png"));
+        }else if ("[:*]".equals(emoticon)){
+            icon = new ImageIcon(Emoticon.class.getResource("/media/angry.png"));
+        }else if ("[:)]".equals(emoticon)){
+            icon = new ImageIcon(Emoticon.class.getResource("/media/smile.png"));
+        }else{
+            icon = new ImageIcon(Emoticon.class.getResource("/media/sceptic.png"));
+        }
         JLabel label = new JLabel(icon);
         label.addMouseListener(new MouseAdapter() {public void mouseClicked(MouseEvent e)  
         {

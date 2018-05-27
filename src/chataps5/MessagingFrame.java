@@ -1,5 +1,6 @@
 package chataps5;
 
+import java.awt.GridLayout;
 import java.io.ObjectInputStream;
 
 import java.util.concurrent.ExecutorService;
@@ -31,6 +32,11 @@ public class MessagingFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tp_write_message = new javax.swing.JTextPane();
+        but_cry = new javax.swing.JButton();
+        but_sad = new javax.swing.JButton();
+        but_happy = new javax.swing.JButton();
+        but_angry = new javax.swing.JButton();
+        
         but_send = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -94,6 +100,48 @@ public class MessagingFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        //Área de Emoticons
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Emoticons", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 255))); // NOI18N
+        
+         
+        //Botões de Emoticon
+        
+        but_cry.setText("[;(]");
+        but_cry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but_emoticonActionPerformed(evt, "[;(]");
+            }
+        });
+
+        but_angry.setText("[:*]");
+        but_angry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but_emoticonActionPerformed(evt, "[:*]");
+            }
+        });
+
+        but_happy.setText("[:)]");
+        but_happy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but_emoticonActionPerformed(evt, "[:)]");
+            }
+        });
+
+        but_sad.setText("[:(]");
+        but_sad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but_emoticonActionPerformed(evt, "[:(]");
+            }
+        });
+        
+
+        jPanel3.setLayout(new GridLayout(0,5));
+        jPanel3.add(but_cry);
+        jPanel3.add(but_happy);
+        jPanel3.add(but_sad);
+        jPanel3.add(but_angry);
+                
+        
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         
@@ -125,6 +173,10 @@ public class MessagingFrame extends javax.swing.JFrame {
         sendMessage();
     }
     
+    private void but_emoticonActionPerformed(java.awt.event.ActionEvent evt, String n) {
+        sendEmoticon(n);
+    }
+    
     void sendMessage()
     {
         String message=to+" "+from+" : " + tp_write_message.getText();
@@ -133,8 +185,16 @@ public class MessagingFrame extends javax.swing.JFrame {
         ta_view_message.append(message.replaceFirst(to,"")+"\n");
     }
     
+    void sendEmoticon(String n)
+    {
+        String message=to+" "+from+" : " + n;
+        clientManager.sendMessage(message);
+        tp_write_message.setText(null);
+        ta_view_message.append(message.replaceFirst(to,"")+"\n");
+    }
+    
 
-    public javax.swing.JButton but_send;
+    public javax.swing.JButton but_send, but_cry, but_angry, but_sad, but_happy;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
