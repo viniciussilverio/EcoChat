@@ -21,8 +21,8 @@ public class TocaSom {
 
             URL file1, file2, file3;
             file1 =  TocaSom.class.getResource("/media/alert.wav");
-            file2 =  TocaSom.class.getResource("/media/alert.wav");
-            file3 =  TocaSom.class.getResource("/media/alert.wav");
+            file2 =  TocaSom.class.getResource("/media/vitas.wav");
+            file3 =  TocaSom.class.getResource("/media/guitarra.wav");
             switch(som){
                 case 1:
                     clip.open(AudioSystem.getAudioInputStream(file1));

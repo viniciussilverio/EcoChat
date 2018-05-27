@@ -245,7 +245,7 @@ public class Tela_Login extends javax.swing.JFrame {
             }
 
             if (isWindowOpen) {
-                messagingFrames[openWindowNo].ta_view_message.append(message.replaceFirst(to, "") + "\n");
+                messagingFrames[openWindowNo].receiveMessage(message.replaceFirst(to, "") + "\n");
                 if (message.contains("[;(]")) {
                     Emoticon.Emoticon("[;(]");
                 }else if (message.contains("[:*]")) {
@@ -256,11 +256,17 @@ public class Tela_Login extends javax.swing.JFrame {
                     Emoticon.Emoticon("[:(]");
                 }
                 messagingFrames[openWindowNo].setVisible(true);
-                TocaSom.Tocar();
+                if (message.contains("[2]")) {
+                    TocaSom.Tocar(2);
+                }else if (message.contains("[3]")) {
+                    TocaSom.Tocar(3);
+                }else{
+                    TocaSom.Tocar(1);
+                }
             } else {
                 messagingFrames[messagingFrameNo] = new MessagingFrame(from, userName, clientManager);
                 messagingFrames[messagingFrameNo].setVisible(true);
-                messagingFrames[messagingFrameNo].ta_view_message.append(message.replaceFirst(to, "") + "\n");
+                messagingFrames[messagingFrameNo].receiveMessage(message.replaceFirst(to, "") + "\n");
                  if (message.contains("[;(]")) {
                     Emoticon.Emoticon("[;(]");
                 }else if (message.contains("[:*]")) {
@@ -270,7 +276,13 @@ public class Tela_Login extends javax.swing.JFrame {
                 }else if (message.contains("[:(]")) {
                     Emoticon.Emoticon("[:(]");
                 }
-                TocaSom.Tocar();
+                if (message.contains("[2]")) {
+                    TocaSom.Tocar(2);
+                }else if (message.contains("[3]")) {
+                    TocaSom.Tocar(3);
+                }else{
+                    TocaSom.Tocar(1);
+                }
                 messagingFrameNo++;
             }
         }

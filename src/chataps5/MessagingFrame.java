@@ -1,6 +1,7 @@
 package chataps5;
 
 import java.awt.GridLayout;
+import java.awt.event.AdjustmentEvent;
 import java.io.ObjectInputStream;
 
 import java.util.concurrent.ExecutorService;
@@ -49,6 +50,9 @@ public class MessagingFrame extends javax.swing.JFrame {
         ta_view_message.setRows(5);
         ta_view_message.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jScrollPane1.setViewportView(ta_view_message);
+        jScrollPane1.getVerticalScrollBar().addAdjustmentListener((AdjustmentEvent e) -> {
+            ta_view_message.select(ta_view_message.getHeight()+1000,0);
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -191,6 +195,11 @@ public class MessagingFrame extends javax.swing.JFrame {
         clientManager.sendMessage(message);
         tp_write_message.setText(null);
         ta_view_message.append(message.replaceFirst(to,"")+"\n");
+    }
+    
+    public void receiveMessage(String message)
+    {
+        ta_view_message.append(message);
     }
     
 

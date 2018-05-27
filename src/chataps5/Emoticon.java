@@ -31,6 +31,7 @@ public class Emoticon extends JFrame {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setAlwaysOnTop(true);
         frame.setVisible(true);
         return frame;
     }
