@@ -12,6 +12,7 @@ public class Emoticon extends JFrame {
         JFrame frame = new JFrame(" Emoticon ");
         ImageIcon icon;
         frame.setUndecorated(true);
+        frame.setIconImage(new ImageIcon(Emoticon.class.getResource("/media/icone-1.png")).getImage());
         if ("[;(]".equals(emoticon)){
             icon = new ImageIcon(Emoticon.class.getResource("/media/crying.png"));
         }else if ("[:*]".equals(emoticon)){

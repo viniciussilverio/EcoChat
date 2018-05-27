@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.StringTokenizer;
+import javax.swing.ImageIcon;
 
 public class Tela_Login extends javax.swing.JFrame {
 
@@ -157,7 +158,7 @@ public class Tela_Login extends javax.swing.JFrame {
                                 .addComponent(lb_status)
                                 .addContainerGap(36, Short.MAX_VALUE))
         );
-
+        setIconImage(new ImageIcon(Emoticon.class.getResource("/media/icone-1.png")).getImage());
         pack();
     }
 

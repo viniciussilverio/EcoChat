@@ -197,7 +197,8 @@ public class MessagingFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
+        
+        setIconImage(new ImageIcon(Emoticon.class.getResource("/media/icone-1.png")).getImage());
         pack();
     }
 

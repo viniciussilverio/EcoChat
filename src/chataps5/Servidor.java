@@ -1,5 +1,7 @@
 package chataps5;
 
+import javax.swing.ImageIcon;
+
 class Servidor extends javax.swing.JFrame{
 
 	public Servidor()
@@ -99,7 +101,8 @@ class Servidor extends javax.swing.JFrame{
                 .addComponent(lb_status)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
-
+        
+        setIconImage(new ImageIcon(Emoticon.class.getResource("/media/icone-1.png")).getImage());
         pack();
     }
     
