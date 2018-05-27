@@ -6,6 +6,7 @@ import java.io.ObjectInputStream;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import javax.swing.ImageIcon;
 
 public class MessagingFrame extends javax.swing.JFrame {
 
@@ -110,28 +111,28 @@ public class MessagingFrame extends javax.swing.JFrame {
          
         //Botões de Emoticon
         
-        but_cry.setText("[;(]");
+        but_cry.setIcon(new ImageIcon(Emoticon.class.getResource("/media/crying-1.png")));
         but_cry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 but_emoticonActionPerformed(evt, "[;(]");
             }
         });
 
-        but_angry.setText("[:*]");
+        but_angry.setIcon(new ImageIcon(Emoticon.class.getResource("/media/angry-1.png")));
         but_angry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 but_emoticonActionPerformed(evt, "[:*]");
             }
         });
 
-        but_happy.setText("[:)]");
+        but_happy.setIcon(new ImageIcon(Emoticon.class.getResource("/media/smile-1.png")));
         but_happy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 but_emoticonActionPerformed(evt, "[:)]");
             }
         });
 
-        but_sad.setText("[:(]");
+        but_sad.setIcon(new ImageIcon(Emoticon.class.getResource("/media/sceptic-1.png")));
         but_sad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 but_emoticonActionPerformed(evt, "[:(]");
