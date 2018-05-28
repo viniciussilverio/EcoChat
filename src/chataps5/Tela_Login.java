@@ -148,7 +148,21 @@ public class Tela_Login extends javax.swing.JFrame {
         sobre.setText("Sobre");
         sobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JOptionPane.showMessageDialog(null, "Escrever mensagem!!!");
+                String texto = "O projeto foi desenvolvido por alunos do 5º SEM de Ciência da Computação\n"
+                         + "da UNIP Swift no ano de 2018.\n\n" +
+                           "Integrantes:\n"
+                         + "Jéssica Santos da Cruz \n" +
+                           "RA: C84737-2\n"
+                         + "E-mail: jessicasantos_cruz@hotmail.com\n\n" +
+                           "Vinícius de Jesus Benedito Silvério\n" +
+                           "RA: C98596-1\n"
+                         + "E-mail: vinos.vinicius@gmail.com\n\n" +
+                           "Yan Luccas Oliveira  \n" +
+                           "RA: C9625C-7\n"
+                         + "E-mail: yan.hbk@hotmail.com \n\n"
+                        + "Github (Cliente): https://github.com/viniciussilverio/EcoChat/ \n"
+                        + "Github (Server): https://github.com/viniciussilverio/ServerChat";
+            JOptionPane.showMessageDialog(null, texto, "Sobre a Equipe", 1);
             }
         });
         jMenu2.add(sobre);
