@@ -149,20 +149,20 @@ public class Tela_Login extends javax.swing.JFrame {
         sobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String texto = "O projeto foi desenvolvido por alunos do 5º SEM de Ciência da Computação\n"
-                         + "da UNIP Swift no ano de 2018.\n\n" +
-                           "Integrantes:\n"
-                         + "Jéssica Santos da Cruz \n" +
-                           "RA: C84737-2\n"
-                         + "E-mail: jessicasantos_cruz@hotmail.com\n\n" +
-                           "Vinícius de Jesus Benedito Silvério\n" +
-                           "RA: C98596-1\n"
-                         + "E-mail: vinos.vinicius@gmail.com\n\n" +
-                           "Yan Luccas Oliveira  \n" +
-                           "RA: C9625C-7\n"
-                         + "E-mail: yan.hbk@hotmail.com \n\n"
+                        + "da UNIP Swift no ano de 2018.\n\n"
+                        + "Integrantes:\n"
+                        + "Jéssica Santos da Cruz \n"
+                        + "RA: C84737-2\n"
+                        + "E-mail: jessicasantos_cruz@hotmail.com\n\n"
+                        + "Vinícius de Jesus Benedito Silvério\n"
+                        + "RA: C98596-1\n"
+                        + "E-mail: vinos.vinicius@gmail.com\n\n"
+                        + "Yan Luccas Oliveira  \n"
+                        + "RA: C9625C-7\n"
+                        + "E-mail: yan.hbk@hotmail.com \n\n"
                         + "Github (Cliente): https://github.com/viniciussilverio/EcoChat/ \n"
                         + "Github (Server): https://github.com/viniciussilverio/ServerChat";
-            JOptionPane.showMessageDialog(null, texto, "Sobre a Equipe", 1);
+                JOptionPane.showMessageDialog(null, texto, "Sobre a Equipe", 1);
             }
         });
         jMenu2.add(sobre);
@@ -276,39 +276,39 @@ public class Tela_Login extends javax.swing.JFrame {
                 messagingFrames[openWindowNo].receiveMessage(message.replaceFirst(to, "") + "\n");
                 if (message.contains("[;(]")) {
                     Emoticon.Emoticon("[;(]");
-                }else if (message.contains("[:*]")) {
+                } else if (message.contains("[:*]")) {
                     Emoticon.Emoticon("[:*]");
-                }else if (message.contains("[:)]")) {
+                } else if (message.contains("[:)]")) {
                     Emoticon.Emoticon("[:)]");
-                }else if (message.contains("[:(]")) {
+                } else if (message.contains("[:(]")) {
                     Emoticon.Emoticon("[:(]");
                 }
                 messagingFrames[openWindowNo].setVisible(true);
                 if (message.contains("[2]")) {
                     TocaSom.Tocar(2);
-                }else if (message.contains("[3]")) {
+                } else if (message.contains("[3]")) {
                     TocaSom.Tocar(3);
-                }else{
+                } else {
                     TocaSom.Tocar(1);
                 }
             } else {
                 messagingFrames[messagingFrameNo] = new MessagingFrame(from, userName, clientManager);
                 messagingFrames[messagingFrameNo].setVisible(true);
                 messagingFrames[messagingFrameNo].receiveMessage(message.replaceFirst(to, "") + "\n");
-                 if (message.contains("[;(]")) {
+                if (message.contains("[;(]")) {
                     Emoticon.Emoticon("[;(]");
-                }else if (message.contains("[:*]")) {
+                } else if (message.contains("[:*]")) {
                     Emoticon.Emoticon("[:*]");
-                }else if (message.contains("[:)]")) {
+                } else if (message.contains("[:)]")) {
                     Emoticon.Emoticon("[:)]");
-                }else if (message.contains("[:(]")) {
+                } else if (message.contains("[:(]")) {
                     Emoticon.Emoticon("[:(]");
                 }
                 if (message.contains("[2]")) {
                     TocaSom.Tocar(2);
-                }else if (message.contains("[3]")) {
+                } else if (message.contains("[3]")) {
                     TocaSom.Tocar(3);
-                }else{
+                } else {
                     TocaSom.Tocar(1);
                 }
                 messagingFrameNo++;
